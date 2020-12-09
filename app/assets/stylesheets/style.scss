@@ -82,7 +82,7 @@ iframe {
 
 /* top */
 #top {
-    background-image: url(../images/main-bg.jpeg);
+    background-image:image-url('main-bg.jpg');
     min-height: 100vh;
 }
 #top .page-title-top {
@@ -141,7 +141,7 @@ iframe {
     color: #499149;
 }
 #question {
-    background-image: url(../images/question-bg.jpeg);
+    background-image:image-url('question-bg.jpg');
     min-height: 100vh;
 }
 
