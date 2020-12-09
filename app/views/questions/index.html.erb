@@ -27,19 +27,20 @@
 
 <div class="wrapper grid">
 
-<%# <% if @questions.present? %> 
-  <%# <% @questions.each do |question|%> 
-  <%# <div class="question"> %>
-    <%# <% link_to(question_path(question.id), method: :get) do %> 
-      <%# <%= image_tag question.image, class: "question-img" %> 
-      <p> <%# question.incomp_text %> </p>
+  <% if @questions.present? %> 
+    <% @questions.each do |question|%> 
+      <div class="question">
+        <%# <% link_to(question_path(question.id), method: :get) do %> 
+        <%# <%= image_tag question.image, class: "question-img" %> 
+        <p> <%= question.incomp_text %> </p>
         <%# <% if question.comments.present? %> 
-          <%# <div class='commentes'>
-            <span>コメントあり！</span>
-          </div> %>
-        <%# <% end %> 
-    <%# <% end %>
-<%# <% end %> 
+        <%# <div class='commentes'>
+          <span>コメントあり！</span>
+        </div> 
+        <% end %> 
+      </div>
+    <% end %>
+  <% end %> 
 <%# 質問画像と内容の配置 %>
   
 </div><!-- /.grid -->
