@@ -1,0 +1,290 @@
+@charset "UTF-8";
+
+/* general */
+
+html {
+    font-size: 100%;
+}
+body{
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.7;
+    color: #00a1ff;
+    font-weight: bold;
+}
+a {
+    text-decoration: none;
+}
+img {
+    max-width: 100%;
+}
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 4%;
+}
+
+/* background */
+.big-bg {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+/* heading */
+.page-title-top {
+    font-size: 5rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: #fff000
+}
+
+
+/* question-button */
+.button {
+    font-size: 1.300rem;
+    background: #00a0dc;
+    color: #fff;
+    border-radius: 10px;
+    padding: 18px 32px;
+}
+.button:hover {
+    background: #47763c;
+}
+
+/* iframe */
+iframe {
+    width: 100%;
+}
+
+/* header */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-nav {
+    display: flex;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+.main-nav li {
+    margin-left: 36px;
+}
+.main-nav a {
+    color: #ffffff;
+}
+.main-nav a:hover {
+    color: #0bd;
+}
+
+/* top */
+#top {
+    background-image: url(../images/main-bg.jpeg);
+    min-height: 100vh;
+}
+#top .page-title-top {
+    text-transform: none;
+}
+.top-content {
+    text-align: center;
+    margin-top: 10%;
+}
+.top-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 42px;
+    color: #fff000;
+}
+
+.questions {
+    text-transform: none;
+    color: #009bc6;
+}
+
+
+/* question */
+#question
+#question-show {
+    background-color: #7acbe1;
+    min-height: 100vh;
+}
+
+#ushowquestion {
+    background-color: #7acbe1;   
+}
+
+.question-content {
+    max-width: 560px;
+    margin-top: 10%;
+}
+.question-content .page-title-q {
+    text-align: center;
+}
+.question-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 0;
+}
+
+.grid {
+  display: grid;
+  gap: 26px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  margin-top: 6%;
+  margin-bottom: 50px;
+}
+
+/* question-page */
+
+.page-title-q {
+    color: #499149;
+}
+#question {
+    background-image: url(../images/question-bg.jpeg);
+    min-height: 100vh;
+}
+
+#question-show {
+    background-color: white;
+}
+
+.movie-title {
+    font-size: 1.375rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px #0bd solid;
+    font-weight: normal;
+}
+
+/* question-form */
+
+form div {
+    margin-bottom: 14px;
+}
+label {
+    font-size: 1.125rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.comp,
+.incomp {
+    background-color: white;
+    color: #00a1ff;
+}
+
+input[type="image"],
+textarea {
+    background: rgba(255,255,255,.5);
+    border: 1px #fff solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input[type="image"] {
+    width: 100%;
+    max-width: 240px;
+}
+textarea {
+    width: 100%;
+    max-width: 480px;
+    height: 6rem;
+}
+input[type="submit"] {
+    border: none;
+    cursor: pointer;
+    line-height: 1;
+}
+
+/* u-show */
+
+.top-link,
+.q-link {
+    color: #00a1ff;
+}
+
+/* movie */
+#movie {
+    background: #FAF7F0;
+    padding: 4% 0;
+}
+#movie .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+#movie .movie-title {
+    margin-bottom: 30px;
+}
+.movie-box {
+    width: 30%;
+}
+
+/* footer */
+footer {
+    background: #e6f0f0;
+    text-align: center;
+    padding: 26px 0;
+}
+footer p {
+    color: #97cdf3;
+    font-size: 0.900rem;
+}
+
+/* <600px */
+@media (max-width: 600px) {
+    .page-title-top, 
+    .page-title-q {
+        font-size: 2.5rem;
+    }
+    .page-header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* header */
+    .main-nav {
+        font-size: 1rem;
+        margin-top: 10px;
+    }
+    .main-nav li {
+        margin: 0 20px;
+    }
+
+    /* top */
+    .top-content {
+        margin-top: 20%;
+    }
+
+    .page-title-top {
+        margin-top: 30px;
+    }
+    
+    /* question */
+    .question-content {
+        margin-top: 20%;
+    }
+
+    #question .page-title-q {
+        margin-top: 40px;
+    }
+
+    /* question-form */
+    input[type="image"],
+    textarea {
+        max-width: 100%;
+    }
+
+    /* movie */
+    .wrapper,
+    #movie .wrapper {
+        flex-direction: column;
+    }
+
+    .movie-box {
+        width: 100%;
+    }
+    .movie-box {
+        margin-bottom: 30px;
+    }
+}
