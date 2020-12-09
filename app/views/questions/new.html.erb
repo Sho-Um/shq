@@ -1,0 +1,51 @@
+<div id="question" class="big-bg">
+    <header class="page-header wrapper">
+        <nav>
+            <ul class="main-nav">
+                <li><%= link_to "マイページ", "#", class: "link" %></li>
+                <li><%= link_to "トップ", questions_path, method: :get, class: "link" %></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="wrapper">
+        <h2 class="page-title-q">質問する</h2>
+        <%= form_with(model: @question, local: true) do |form| %>
+            <%# <div>
+                <label for="image"><span class=q-picture>写真</span></label>
+                <input type="image" id="image" name="your-image">
+            </div> %>
+
+            <div>
+                <%= form.label :comp_text, "どこまでわかったか?" , class: "comp"%>
+                <%= form.text_area :comp_text, placeholder: "(わかったところ)" %>
+            </div>
+
+            <div>
+                <%= form.label :incomp_text, "どこからわからないか?" , class: "incomp"%>
+                <%= form.text_area :incomp_text, placeholder: "(わからないところ)" %>
+            </div>
+
+            <%= form.submit "送信" , class: "button" %>
+        <% end %>
+    </div><!-- /.wrapper -->
+</div><!-- /#question -->
+
+<section id="movie">
+    <div class="wrapper">
+        <div class="movie-box">
+            <h3 class="movie-title">動画１</h3>
+            <iframe title="vimeo-player" src="https://player.vimeo.com/video/488443701" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <div class="movie-box">
+            <h3 class="movie-title">動画２</h3>
+            <iframe title="vimeo-player" src="https://player.vimeo.com/video/488443701" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+        </div> 
+
+        <div class="movie-box">
+            <h3 class="movie-title">動画３</h3>
+            <iframe title="vimeo-player" src="https://player.vimeo.com/video/488443701" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div><!-- /.wrapper -->
+</section><!-- /#movie -->

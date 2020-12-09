@@ -73,10 +73,10 @@ iframe {
 .main-nav li {
     margin-left: 36px;
 }
-.main-nav a {
+.link {
     color: #ffffff;
 }
-.main-nav a:hover {
+.main-nav .link:hover {
     color: #0bd;
 }
 
@@ -138,6 +138,7 @@ iframe {
 /* question-page */
 
 .page-title-q {
+    font-weight: 700;
     color: #499149;
 }
 #question {
@@ -167,10 +168,12 @@ label {
     display: block;
 }
 
-.comp,
-.incomp {
-    background-color: white;
+.comp {
     color: #00a1ff;
+}
+
+.incomp {
+    color: white;
 }
 
 input[type="image"],
