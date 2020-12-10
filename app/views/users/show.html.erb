@@ -1,0 +1,28 @@
+<div id="ushowquestion">
+    <header class="page-header wrapper">
+        <nav>
+            <ul class="main-nav">
+                <li><%= link_to "トップ", questions_path, method: :get, class: "link" %></li>
+                <li><%= link_to "質問する", new_question_path, method: :get, class: "link" %></li>
+            </ul>
+        </nav>
+    </header>
+</div><!-- /#question -->
+
+<div class="wrapper grid">
+  <% if @questions.present? %> 
+    <% @questions.each do |question|%> 
+      <div class="question">
+        <%= link_to(question_path(question.id), method: :get) do %>  
+          <%# <%= image_tag question.image, class: "question-img" %> 
+          <p> <%= question.incomp_text %> </p>
+          <%# <% if question.comments.present? %> 
+          <%# <div class='commentes'>
+            <span>コメントあり！</span>
+              </div> 
+          <% end %>
+        <% end %>  
+      </div>
+    <% end %>
+  <% end %> 
+</div><!-- /.grid -->
