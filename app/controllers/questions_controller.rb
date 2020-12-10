@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
   private
 
   def question_params
-    params.require(:question).permit(:comp_text, :incomp_text).merge(user_id: current_user.id)
+    params.require(:question).permit(:comp_text, :incomp_text, :image).merge(user_id: current_user.id)
   end
 
   def move_to_index
