@@ -3,10 +3,10 @@
       <header class="page-header wrapper">
           <nav>
               <ul class="main-nav">
-                  <li><a href="#">ログアウト</a></li>
+                <% if user_signed_in? %>
+                  <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "link" %></li>
                   <li><a href="#">マイページ</a></li>
-                  <!-- ログインしていなかったら -->
-                  <!-- <li><a href="#">ログイン</a></li> -->
+                <% end %>
               </ul>
           </nav>
       </header>
@@ -14,9 +14,12 @@
       <div class="top-content wrapper">
           <h2 class="page-title-top">Start Here<br>Quickly!!!</h2>
           <p>今すぐ、ここから始めよう！</p>
+      <% if user_signed_in? %>
           <%= link_to "質問する", new_question_path, method: :get, class: "button" %>
-          <!-- ログインしていなかったら -->
-          <!-- <a class="button" href="#">新規登録</a> -->
+      <% elsif %>
+          <%= link_to "新規登録", new_user_registration_path, method: :get, class: "button" %>
+          <%= link_to "ログイン", new_user_session_path, method: :get, class: "button" %>
+      <% end %>
       </div><!-- /.top-content -->
   </div><!-- /#top -->
 </header>
