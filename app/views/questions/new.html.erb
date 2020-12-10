@@ -2,7 +2,7 @@
     <header class="page-header wrapper">
         <nav>
             <ul class="main-nav">
-                <li><%= link_to "マイページ", "#", class: "link" %></li>
+                <li><%= link_to "マイページ", "/users/#{current_user.id}", method: :get, class: "link" %></li>
                 <li><%= link_to "トップ", questions_path, method: :get, class: "link" %></li>
             </ul>
         </nav>

@@ -1,19 +1,21 @@
 <div id="question-show" class="big-bg">
     <header class="page-header wrapper">
+      <% if user_signed_in? %>
         <nav>
             <ul class="main-nav">
                 <li><%= link_to "トップ", questions_path, method: :get, class: "top-link" %></li>
-                <%# <li><a href="q_index.html"><span class="top-link">トップ</span></a></li> %>
-                <li><a href="#"><span class="my-link">マイページ</span></a></li>
+                <li><%= link_to "マイページ", "/users/#{current_user.id}", method: :get, class: "q-link" %></li>
                 <li><%= link_to "質問する", new_question_path, method: :get, class: "q-link" %></li>
-                <%# <li><a href="q_new.html"><span class="q-link">質問する</span></a></li> %>
-                <!-- ログインしていない時には、
-                <li><a href="u_sign_up.html">ログイン</a></li> -->
             </ul>
         </nav>
+      <% else %>
+      <div class="top-content wrapper">
+          <%= link_to "新規登録", new_user_registration_path, method: :get, class: "button" %>
+          <%= link_to "ログイン", new_user_session_path, method: :get, class: "button" %>
+      <% end %>
+      </div>
     </header>
-
-
+    
     <div class="wrapper grid">
         <div class="question">
             <%# <img src="images/question1.jpg" alt="質問画像"> %>
@@ -21,5 +23,5 @@
             <p>わかったところ：<br><%= @question.comp_text %></p><br>
             <p>わからないところ：<br><%= @question.incomp_text %></p>
         </div>
-    </div><!-- /.grid -->
+    </div>
 </div>
