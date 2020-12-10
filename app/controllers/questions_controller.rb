@@ -1,4 +1,7 @@
 class QuestionsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create]
+  before_action :move_to_index, except: [:index, :show]
+
   def index
     @questions = Question.all
   end
@@ -24,5 +27,11 @@ class QuestionsController < ApplicationController
 
   def question_params
     params.require(:question).permit(:comp_text, :incomp_text)
+  end
+
+  def move_to_index
+    unless user_signed_in?
+      redirect_to action: :index
+    end
   end
 end
