@@ -30,14 +30,15 @@
   <% if @questions.present? %> 
     <% @questions.each do |question|%> 
       <div class="question">
-        <%# <% link_to(question_path(question.id), method: :get) do %> 
-        <%# <%= image_tag question.image, class: "question-img" %> 
-        <p> <%= question.incomp_text %> </p>
-        <%# <% if question.comments.present? %> 
-        <%# <div class='commentes'>
-          <span>コメントあり！</span>
-        </div> 
-        <% end %> 
+        <%= link_to(question_path(question.id), method: :get) do %>  
+          <%# <%= image_tag question.image, class: "question-img" %> 
+          <p> <%= question.incomp_text %> </p>
+          <%# <% if question.comments.present? %> 
+          <%# <div class='commentes'>
+            <span>コメントあり！</span>
+              </div> 
+          <% end %>
+        <% end %>  
       </div>
     <% end %>
   <% end %> 
