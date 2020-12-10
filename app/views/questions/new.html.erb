@@ -11,10 +11,11 @@
     <div class="wrapper">
         <h2 class="page-title-q">質問する</h2>
         <%= form_with(model: @question, local: true) do |form| %>
-            <%# <div>
-                <label for="image"><span class=q-picture>写真</span></label>
-                <input type="image" id="image" name="your-image">
-            </div> %>
+            <div>
+                <%# <label for="image"><span class=q-picture>写真</span></label> %>
+                <%= form.label :image, "写真" , class: "question-img"%>
+                <%= form.file_field :image, id:"item-image" %>
+            </div> 
 
             <div>
                 <%= form.label :comp_text, "どこまでわかったか?" , class: "comp"%>

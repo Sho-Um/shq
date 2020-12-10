@@ -9,17 +9,22 @@
             </ul>
         </nav>
       <% else %>
-      <div class="top-content wrapper">
+        <nav>
+          <ul class="main-nav">
+              <li><%= link_to "トップ", questions_path, method: :get, class: "top-link" %></li>
+          </ul>
+        </nav>
+        <div class="top-content wrapper">
           <%= link_to "新規登録", new_user_registration_path, method: :get, class: "button" %>
           <%= link_to "ログイン", new_user_session_path, method: :get, class: "button" %>
+        </div>
       <% end %>
-      </div>
     </header>
     
     <div class="wrapper grid">
         <div class="question">
             <%# <img src="images/question1.jpg" alt="質問画像"> %>
-            <%# <%= image_tag question.image, class: "question-img" %> 
+            <%= image_tag  @question.image, class: "question-img" if @question.image.attached? %> 
             <p>わかったところ：<br><%= @question.comp_text %></p><br>
             <p>わからないところ：<br><%= @question.incomp_text %></p>
         </div>

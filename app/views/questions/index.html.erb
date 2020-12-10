@@ -34,7 +34,7 @@
     <% @questions.each do |question|%> 
       <div class="question">
         <%= link_to(question_path(question.id), method: :get) do %>  
-          <%# <%= image_tag question.image, class: "question-img" %> 
+          <%= image_tag question.image, class: "question-img" if question.image.attached? %> 
           <p> <%= question.incomp_text %> </p>
           <%# <% if question.comments.present? %> 
           <%# <div class='commentes'>
