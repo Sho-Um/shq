@@ -14,4 +14,6 @@ class User < ApplicationRecord
   EMAIL_REGEX = /.....+@(?=staherqui)/.freeze
   validates_format_of :email, with: EMAIL_REGEX
 
+  has_many :questions
+
 end
