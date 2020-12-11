@@ -15,8 +15,17 @@
       <div class="question">
         <%= link_to(question_path(question.id), method: :get) do %>  
           <%= image_tag question.image, class: "question-img" if question.image.attached? %> 
-          <p>わかったところ：<br><%= question.comp_text %></p><br>
-          <p>わからないところ：<br><%= question.incomp_text %></p>
+            <% if question.advices.present? %> 
+              <div class="u-show-advice-info-box">
+                <span class="advice-info">(アドバイスあり！)</span>
+              </div> 
+            <% else %>
+              <div class="u-show-advice-info-box">
+                <span class="advice-no-info">(アドバイスはまだだよ)</span>
+              </div> 
+            <% end %>
+          <p><span class="show-comp">わかったところ：<br><%= question.comp_text %></span></p><br>
+          <p><span class="show-incomp">わからないところ：<br><%= question.incomp_text %> </span></p><br>
           <%# <% if question.comments.present? %> 
           <%# <div class='commentes'>
             <span>コメントあり！</span>

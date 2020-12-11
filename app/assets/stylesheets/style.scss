@@ -8,12 +8,13 @@ html {
 body{
     font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
     line-height: 1.7;
-    color: #00a1ff;
+    color: green;
     font-weight: bold;
 }
 a {
     text-decoration: none;
 }
+
 img {
     max-width: 100%;
 }
@@ -23,6 +24,15 @@ img {
     padding: 0 4%;
 }
 
+.grid {
+    display: grid;
+    gap: 26px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    margin-top: 6%;
+    margin-bottom: 50px;
+  }
+
+
 /* background */
 .big-bg {
     background-size: cover;
@@ -30,26 +40,36 @@ img {
     background-repeat: no-repeat;
 }
 
-/* heading */
+/* top-page */
 .page-title-top {
     font-size: 5rem;
     font-family: 'Philosopher', serif;
     text-transform: uppercase;
-    font-weight: normal;
+    font-weight: 550;
     color: #fff000
 }
 
 
-/* question-button */
-.button {
+/* button */
+.top-button,
+.session-button,
+.regist-button{
     font-size: 1.300rem;
-    background: #00a0dc;
+    background: rgba(0, 160, 220, 0.9);
     color: #fff;
     border-radius: 10px;
     padding: 18px 32px;
 }
 .button:hover {
     background: #47763c;
+}
+
+.advice-button {
+    font-size: 1.100rem;
+    background: rgba(0, 160, 220, 0.9);
+    color: #fff;
+    border-radius: 10px;
+    padding: 18px 20px;
 }
 
 /* iframe */
@@ -81,6 +101,10 @@ iframe {
 }
 
 /* top */
+.index-incomp {
+    color: green;
+}
+
 #top {
     background-image:image-url('main-bg.jpg');
     min-height: 100vh;
@@ -98,11 +122,26 @@ iframe {
     color: #fff000;
 }
 
-.questions {
+.questions-index {
     text-transform: none;
     color: #009bc6;
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
+.advice-info-box {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.advice-info {
+    color: red;
+}
+
+.advice-no-info {
+    color: black;
+}
 
 /* question */
 #question
@@ -127,19 +166,12 @@ iframe {
     margin: 10px 0 0;
 }
 
-.grid {
-  display: grid;
-  gap: 26px;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  margin-top: 6%;
-  margin-bottom: 50px;
-}
+
 
 /* question-page */
 
 .page-title-q {
     font-weight: 700;
-    color: #499149;
 }
 #question {
     background-image:image-url('question-bg.jpg');
@@ -168,18 +200,10 @@ label {
     display: block;
 }
 
-.comp {
-    color: #00a1ff;
-}
-
-.incomp {
-    color: white;
-}
-
 input[type="image"],
 textarea {
     background: rgba(255,255,255,.5);
-    border: 1px #fff solid;
+    border: 0px;
     border-radius: 5px;
     padding: 10px;
     font-size: 1rem;
@@ -192,7 +216,8 @@ input[type="image"] {
 textarea {
     width: 100%;
     max-width: 480px;
-    height: 6rem;
+    height: 5rem;
+    background-color: rgba(145, 255, 0, 0.85);
 }
 input[type="submit"] {
     border: none;
@@ -200,12 +225,72 @@ input[type="submit"] {
     line-height: 1;
 }
 
-/* u-show */
+.comple, .incomple {
+    resize: none;
+}
+
+.hidden {
+    display: none;
+}
+
+.form-image {
+    background-color: rgba(145, 255, 0, 0.85);
+    text-align: center;
+    border-radius: 5px;
+}
+  
+.submit-button {
+    font-size: 1.300rem;
+    background: rgba(0,128,0,0.9);
+    color: #fff;
+    border-radius: 10px;
+    padding: 18px 32px;
+}
+
+// question-show
+
+.show-top-link {
+    color: #00a1ff;
+    font-size: 2.0rem;
+}
+
+.advice {
+    color: #009bc6;
+}
+.advising {
+    resize: none;
+    background-color: rgba(0,161,255,0.3);
+}
+
+.advice-index {
+    font-weight: bold;
+    font-size: 1.200rem;
+    text-align: center;
+}
+
+
+.adviser {
+    font-size: 0.800rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* user-show */
 
 .top-link,
 .q-link,
 .my-link {
     color: #00a1ff;
+}
+
+.u-show-advice-info-box {
+    display: flex;
+    justify-content: center;
+}
+
+.show-comp,
+.show-incomp {
+    color: green;
 }
 
 /* movie */
@@ -237,10 +322,14 @@ footer p {
 
 /* <600px */
 @media (max-width: 600px) {
-    .page-title-top, 
-    .page-title-q {
+    .page-title-top{
         font-size: 2.5rem;
     }
+
+    .page-title-q {
+        font-size: 1.6rem;
+    }
+    
     .page-header {
         flex-direction: column;
         align-items: center;

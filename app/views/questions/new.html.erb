@@ -9,25 +9,23 @@
     </header>
 
     <div class="wrapper">
-        <h2 class="page-title-q">質問する</h2>
         <%= form_with(model: @question, local: true) do |form| %>
             <div>
-                <%# <label for="image"><span class=q-picture>写真</span></label> %>
-                <%= form.label :image, "写真" , class: "question-img"%>
-                <%= form.file_field :image, id:"item-image" %>
+                <label class="form-image">
+                  <%= form.file_field :image, class: "hidden" %>
+                  <h2 class="page-title-q">質問する写真を選択<br>( ここをタッチ！! )</h2>
+                </label>
             </div> 
 
             <div>
-                <%= form.label :comp_text, "どこまでわかったか?" , class: "comp"%>
-                <%= form.text_area :comp_text, placeholder: "(わかったところ)" , class: "comple" %>
+                <%= form.text_area :comp_text, placeholder: "わかったところ(必須)" , class: "comple" %>
             </div>
 
             <div>
-                <%= form.label :incomp_text, "どこからわからないか?" , class: "incomp"%>
-                <%= form.text_area :incomp_text, placeholder: "(わからないところ)", class: "incomple" %>
+                <%= form.text_area :incomp_text, placeholder: "わからないところ(必須)", class: "incomple" %>
             </div>
 
-            <%= form.submit "送信" , class: "button" %>
+            <%= form.submit "送信" , class: "submit-button" %>
         <% end %>
     </div><!-- /.wrapper -->
 </div><!-- /#question -->

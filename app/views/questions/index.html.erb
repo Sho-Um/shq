@@ -15,17 +15,17 @@
           <h2 class="page-title-top">Start Here<br>Quickly!!!</h2>
           <p>今すぐ、ここから始めよう！</p>
       <% if user_signed_in? %>
-          <%= link_to "質問する", new_question_path, method: :get, class: "button" %>
+          <%= link_to "質問する", new_question_path, method: :get, class: "top-button" %>
       <% elsif %>
-          <%= link_to "新規登録", new_user_registration_path, method: :get, class: "button" %>
-          <%= link_to "ログイン", new_user_session_path, method: :get, class: "button" %>
+          <%= link_to "新規登録", new_user_registration_path, method: :get, class: "top-button" %>
+          <%= link_to "ログイン", new_user_session_path, method: :get, class: "top-button" %>
       <% end %>
       </div><!-- /.top-content -->
   </div><!-- /#top -->
 </header>
 
 <div class="question-content wrapper">
-  <h2 class="questions">質問一覧</h2>
+  <h2 class="questions-index">質問一覧</h2>
 </div><!-- /.question-content -->
 
 <div class="wrapper grid">
@@ -35,12 +35,16 @@
       <div class="question">
         <%= link_to(question_path(question.id), method: :get) do %>  
           <%= image_tag question.image, class: "question-img" if question.image.attached? %> 
-          <p> <%= question.incomp_text %> </p>
-          <%# <% if question.comments.present? %> 
-          <%# <div class='commentes'>
-            <span>コメントあり！</span>
+          <p> <span class="index-incomp"><%= question.incomp_text %> </span></p>
+            <% if question.advices.present? %> 
+              <div class="advice-info-box">
+                <span class="advice-info">(アドバイスあり！)</span>
               </div> 
-          <% end %>
+            <% else %>
+              <div class="advice-info-box">
+                <span class="advice-no-info">(アドバイスはまだだよ)</span>
+              </div> 
+            <% end %>
         <% end %>  
       </div>
     <% end %>
