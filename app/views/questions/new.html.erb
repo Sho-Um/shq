@@ -19,12 +19,12 @@
 
             <div>
                 <%= form.label :comp_text, "どこまでわかったか?" , class: "comp"%>
-                <%= form.text_area :comp_text, placeholder: "(わかったところ)" %>
+                <%= form.text_area :comp_text, placeholder: "(わかったところ)(400字以内)" , class: "comple" %>
             </div>
 
             <div>
                 <%= form.label :incomp_text, "どこからわからないか?" , class: "incomp"%>
-                <%= form.text_area :incomp_text, placeholder: "(わからないところ)" %>
+                <%= form.text_area :incomp_text, placeholder: "(わからないところ)(400字以内)", class: "incomple" %>
             </div>
 
             <%= form.submit "送信" , class: "button" %>

@@ -21,6 +21,8 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    @advice = Advice.new
+    @advices = @question.advices.includes(:user)
   end
 
   private

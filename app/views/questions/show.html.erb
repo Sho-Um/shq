@@ -26,7 +26,26 @@
             <%# <img src="images/question1.jpg" alt="質問画像"> %>
             <%= image_tag  @question.image, class: "question-img" if @question.image.attached? %> 
             <p>わかったところ：<br><%= @question.comp_text %></p><br>
-            <p>わからないところ：<br><%= @question.incomp_text %></p>
+            <p>わからないところ：<br><%= @question.incomp_text %></p><br>
+            <% if user_signed_in? && current_user.id != @question.user_id %>
+              <%= form_with(model: [@question, @advice], local: true) do |form| %>
+                <%= form.text_area :text, placeholder: "アドバイスする(400字以内)", class: "advising" %>
+                <%= form.submit "アドバイス送信" , class: "button"%>
+              <% end %>
+            <% end %>
+            <div class="advice"><br>
+            <h4>アドバイス一覧</h4>
+            <% if @advices.present?  %>
+                <% @advices.each do |advice| %>
+                <p>
+                    <%= advice.user.name %> からのアドバイス：<br>
+                    <%= advice.text %>
+                </p>
+                <% end %>
+            <% else %>
+              <p>まだアドバイスはないよ</p>
+            <% end %>
+            </div>
         </div>
     </div>
 </div>
