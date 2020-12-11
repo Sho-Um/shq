@@ -29,7 +29,7 @@
             <p>わからないところ：<br><%= @question.incomp_text %></p><br>
             <% if user_signed_in? && current_user.id != @question.user_id %>
               <%= form_with(model: [@question, @advice], local: true) do |form| %>
-                <%= form.text_area :text, placeholder: "アドバイスする(400字以内)", class: "advising" %>
+                <%= form.text_area :text, placeholder: "アドバイスする", class: "advising" %>
                 <%= form.submit "アドバイス送信" , class: "button"%>
               <% end %>
             <% end %>
