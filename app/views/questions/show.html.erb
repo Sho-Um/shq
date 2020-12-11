@@ -5,7 +5,6 @@
             <ul class="main-nav">
                 <li><%= link_to "トップ", questions_path, method: :get, class: "top-link" %></li>
                 <li><%= link_to "マイページ", "/users/#{current_user.id}", method: :get, class: "q-link" %></li>
-                <li><%= link_to "質問する", new_question_path, method: :get, class: "q-link" %></li>
             </ul>
         </nav>
       <% else %>
