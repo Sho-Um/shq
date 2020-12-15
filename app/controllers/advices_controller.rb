@@ -7,7 +7,7 @@ class AdvicesController < ApplicationController
   private
   
   def advice_params
-    params.require(:advice).permit(:text).merge(user_id: current_user.id, question_id: params[:question_id])
+    params.require(:advice).permit(:text, :image).merge(user_id: current_user.id, question_id: params[:question_id])
   end
 
 end

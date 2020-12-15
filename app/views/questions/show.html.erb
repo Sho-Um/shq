@@ -29,6 +29,10 @@
             <% if user_signed_in? && current_user.id != @question.user_id %>
               <%= form_with(model: [@question, @advice], local: true) do |form| %>
                 <%= form.text_area :text, placeholder: "アドバイスする", class: "advising" %>
+                <label class="form-image">
+                  <%= form.file_field :image, class: "hidden" %>
+                  <h2 class="advice-image-button">アドバイスに写真をつけるなら<br> ここをタッチ！! <br> (なくてもOK！)</h2>
+                </label>
                 <%= form.submit "アドバイス送信" , class: "advice-button"%>
               <% end %>
             <% end %>
@@ -36,6 +40,7 @@
             <h4 class="advice-index">[アドバイス一覧]</h4><br>
             <% if @advices.present?  %>
                 <% @advices.each do |advice| %>
+                <%= image_tag advice.image, class: "advice-img" if advice.image.attached? %> 
                 <p>
                     <%= advice.text %>
                 </p>
