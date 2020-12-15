@@ -28,11 +28,11 @@
             <p>わからないところ：<br><%= @question.incomp_text %></p><br>
             <% if user_signed_in? && current_user.id != @question.user_id %>
               <%= form_with(model: [@question, @advice], local: true) do |form| %>
-                <%= form.text_area :text, placeholder: "アドバイスする", class: "advising" %>
                 <label class="form-image">
                   <%= form.file_field :image, class: "hidden" %>
                   <h2 class="advice-image-button">アドバイスに写真をつけるなら<br> ここをタッチ！! <br> (なくてもOK！)</h2>
                 </label>
+                <%= form.text_area :text, placeholder: "アドバイスする", class: "advising" %>
                 <%= form.submit "アドバイス送信" , class: "advice-button"%>
               <% end %>
             <% end %>
